@@ -1,0 +1,68 @@
+在 Unity 中，一个物体挂载的脚本（即 MonoBehaviour 脚本）的执行逻辑可以分为以下几个阶段和方法：
+
+1. **Awake()**：在脚本实例化时调用。用于初始化脚本或在游戏开始前设置初始状态。无论脚本是否启用，都会调用此方法。
+
+2. **OnEnable()**：当脚本被启用时调用。每次脚本从禁用状态变为启用状态时都会调用此方法。
+
+3. **Start()**：在脚本第一次被启用时调用。用于在游戏开始时进行初始化。此方法在 `Awake()` 之后调用，并且只在脚本启用时调用一次。
+
+4. **Update()**：每帧调用一次。用于处理需要每帧更新的逻辑。
+
+5. **FixedUpdate()**：每固定帧率调用一次。用于处理物理相关的更新逻辑。
+
+6. **LateUpdate()**：在所有 `Update()` 方法调用之后调用。用于处理需要在所有更新完成后执行的逻辑。
+
+7. **OnDisable()**：当脚本被禁用时调用。每次脚本从启用状态变为禁用状态时都会调用此方法。
+
+8. **OnDestroy()**：当脚本实例被销毁时调用。用于清理资源或在对象销毁前执行逻辑。
+
+以下是一个示例脚本，展示了这些方法的使用：
+
+```csharp
+using UnityEngine;
+
+public class ExampleScript : MonoBehaviour
+{
+    void Awake()
+    {
+        Debug.Log("Awake called");
+    }
+
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+    }
+
+    void Start()
+    {
+        Debug.Log("Start called");
+    }
+
+    void Update()
+    {
+        Debug.Log("Update called");
+    }
+
+    void FixedUpdate()
+    {
+        Debug.Log("FixedUpdate called");
+    }
+
+    void LateUpdate()
+    {
+        Debug.Log("LateUpdate called");
+    }
+
+    void OnDisable()
+    {
+        Debug.Log("OnDisable called");
+    }
+
+    void OnDestroy()
+    {
+        Debug.Log("OnDestroy called");
+    }
+}
+```
+
+在这个示例中，每个方法都会在其对应的生命周期阶段被调用，并在控制台输出一条消息。

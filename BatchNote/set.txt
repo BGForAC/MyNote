@@ -1,0 +1,20 @@
+set 命令在批处理文件中用于定义和修改环境变量。以下是 set 命令的一些常用选项：  
+定义变量：  
+set variable=value
+显示所有环境变量：  
+set
+删除变量：  
+set variable=
+启用延迟变量扩展：  
+setlocal enabledelayedexpansion
+禁用延迟变量扩展：  
+setlocal disabledelayedexpansion
+启用扩展：  
+setlocal enableextensions
+禁用扩展：  
+setlocal disableextensions
+使用子字符串：  
+set variable=%variable:~start,length%
+替换字符串：  
+set variable=%variable:old=new%
+这些选项可以帮助你在批处理文件中更灵活地操作环境变量。
